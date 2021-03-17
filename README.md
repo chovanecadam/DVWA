@@ -140,8 +140,13 @@ _Note: This will be different if you installed DVWA into a different directory._
 - - -
 
 ## Docker Container
-- [dockerhub page](https://hub.docker.com/r/vulnerables/web-dvwa/)
-`docker run --rm -it -p 80:80 vulnerables/web-dvwa`
+
+```
+docker build --tag dvwa .
+docker run -dp 127.0.0.1:8080:80 --name dvwa dvwa
+```
+
+You can now access the application on localhost:8080.
 
 Please ensure you are using aufs due to previous MySQL issues. Run `docker info` to check your storage driver. If it isn't aufs, please change it as such. There are guides for each operating system on how to do that, but they're quite different so we won't cover that here.
 
